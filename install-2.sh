@@ -146,19 +146,16 @@ echo "D10"
 # esac
 
 echo "D11"
-dockerd
-# apt -y install python3-pip
-# pip3 install --force-reinstall --break-system-packages 'requests<2.29.0' 'urllib3<2.0'
-fatal "Debug"
-echo "D11.5"
 
 readarray -t services < <(docker-compose config --services)
 echo "D12"
 for service in "${services[@]}"; do
     echo "Pulling image for $service..."
-    docker-compose pull --no-parallel "$service"
+    # docker-compose pull --no-parallel "$service"
     sleep 5
 done
+
+fatal "Debug"
 
 echo "D13"
 docker-compose --profile migration up --force-recreate --build -d
