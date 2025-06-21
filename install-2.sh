@@ -33,8 +33,8 @@ function exists() {
 randomPass() {
     exists openssl || {
         info "Installing openssl... 🔐"
-        sudo apt update &>/dev/null
-        sudo apt install openssl -y &>/dev/null
+        apt update &>/dev/null
+        apt install openssl -y &>/dev/null
     }
     openssl rand -hex 10
 }
@@ -146,7 +146,7 @@ echo "D10"
 # esac
 
 echo "D11"
-readarray -t services < <(sudo -E docker-compose config --services)
+readarray -t services < <(docker-compose config --services)
 echo "D12"
 for service in "${services[@]}"; do
     echo "Pulling image for $service..."
