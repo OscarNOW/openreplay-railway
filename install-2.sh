@@ -147,7 +147,7 @@ echo "D10"
 
 echo "D11"
 apt -y install python3-pip
-pip3 --break-system-packages install requests==2.29.0
+pip3 install --break-system-packages requests==2.29.0
 fatal "Debug"
 echo "D11.5"
 
