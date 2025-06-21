@@ -148,7 +148,7 @@ echo "D10"
 echo "D11"
 apt -y install python3-pip
 pip3 install --break-system-packages requests==2.29.0
-fatal "Debug"
+# fatal "Debug"
 echo "D11.5"
 
 readarray -t services < <(docker-compose config --services)
