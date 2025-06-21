@@ -1,7 +1,10 @@
-FROM docker:24.0-cli
+FROM ubuntu:22.04
+
+# Voorkom interactieve prompts
+ENV DEBIAN_FRONTEND=noninteractive
 
 # Install bash, curl, git, docker-compose
-RUN apk add --no-cache bash curl git docker-compose
+RUN apt install -y curl git bash docker-compose
 
 # Copy install script
 COPY . .
