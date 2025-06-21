@@ -147,7 +147,7 @@ echo "D10"
 
 echo "D11"
 
-systemctl status docker
+systemctl start docker
 fatal "Debug"
 
 readarray -t services < <(docker-compose config --services)
