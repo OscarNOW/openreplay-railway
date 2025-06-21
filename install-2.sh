@@ -149,13 +149,13 @@ echo "D11"
 
 readarray -t services < <(docker-compose config --services)
 echo "D12"
-for service in "${services[@]}"; do
-    echo "Pulling image for $service..."
+# for service in "${services[@]}"; do
+    # echo "Pulling image for $service..."
     # docker-compose pull --no-parallel "$service"
-    sleep 5
-done
+    # sleep 5
+# done
 
-fatal "Debug"
+# fatal "Debug"
 
 echo "D13"
 docker-compose --profile migration up --force-recreate --build -d
