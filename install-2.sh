@@ -150,12 +150,12 @@ readarray -t services < <(docker-compose config --services)
 echo "D12"
 for service in "${services[@]}"; do
     echo "Pulling image for $service..."
-    docker-compose pull --no-parallel "$service"
+    docker compose pull --no-parallel "$service"
     sleep 5
 done
 
 echo "D13"
-docker-compose --profile migration up --force-recreate --build -d
+docker compose --profile migration up --force-recreate --build -d
 echo "D14"
 cp common.env common.env.bak
 echo "D15"
