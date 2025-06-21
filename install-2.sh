@@ -147,7 +147,7 @@ echo "D10"
 
 echo "D11"
 apt -y install python3-pip
-pip3 install 'urllib3<2'
+pip3 install --break-system-packages 'urllib3<2'
 # fatal "Debug"
 echo "D11.5"
 
