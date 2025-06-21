@@ -146,6 +146,10 @@ echo "D10"
 # esac
 
 echo "D11"
+
+systemctl status docker
+fatal "Debug"
+
 readarray -t services < <(docker-compose config --services)
 echo "D12"
 for service in "${services[@]}"; do
