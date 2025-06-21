@@ -1,5 +1,5 @@
 #!/bin/bash
 
-sudo wget https://raw.githubusercontent.com/openreplay/openreplay/main/scripts/helmcharts/openreplay-cli -O /bin/openreplay 
-sudo chmod +x /bin/openreplay
+wget https://raw.githubusercontent.com/openreplay/openreplay/main/scripts/helmcharts/openreplay-cli -O /bin/openreplay 
+chmod +x /bin/openreplay
 openreplay -i openreplay-railway-production.up.railway.app
