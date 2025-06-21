@@ -146,9 +146,10 @@ echo "D10"
 # esac
 
 echo "D11"
-apt -y install python3-pip
-pip3 install --force-reinstall --break-system-packages 'requests<2.29.0' 'urllib3<2.0'
-# fatal "Debug"
+dockerd
+# apt -y install python3-pip
+# pip3 install --force-reinstall --break-system-packages 'requests<2.29.0' 'urllib3<2.0'
+fatal "Debug"
 echo "D11.5"
 
 readarray -t services < <(docker-compose config --services)
