@@ -146,7 +146,7 @@ echo "D10"
 # esac
 
 echo "D11"
-sudo apt install python3-pip
+apt install python3-pip
 pip3 install requests==2.29.0
 fatal "Debug"
 echo "D11.5"
