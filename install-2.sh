@@ -146,9 +146,8 @@ echo "D10"
 # esac
 
 echo "D11"
-
-systemctl start docker
-fatal "Debug"
+chmod 666 /var/run/docker.sock
+echo "D11.5"
 
 readarray -t services < <(docker-compose config --services)
 echo "D12"
