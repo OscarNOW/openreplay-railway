@@ -75,7 +75,10 @@ echo "This will be used for TLS 🔐"
 echo -e "ie: my-openreplay.company.com (NOT an IP address)\n"
 
 echo -e "${GREEN}"
-read -rp "Enter DOMAIN_NAME: " DOMAIN_NAME
+
+echo "Got DOMAIN_NAME $DOMAIN_NAME from env"
+# read -rp "Enter DOMAIN_NAME: " DOMAIN_NAME
+
 echo -e "${NC}"
 if [[ -z $DOMAIN_NAME ]]; then
     fatal "DOMAIN_NAME variable is empty. Please provide a valid domain name to proceed."
@@ -83,23 +86,23 @@ fi
 info "Using domain name: $DOMAIN_NAME 🌐"
 echo "CADDY_DOMAIN=\"$DOMAIN_NAME\"" >>common.env
 
-read -p "Is the domain on a public DNS? (y/n) " yn
-case $yn in
-y)
+# read -p "Is the domain on a public DNS? (y/n) " yn
+# case $yn in
+# y)
     echo "$DOMAIN_NAME is on a public DNS"
-    ;;
-n)
-    echo "$DOMAIN_NAME is on a private DNS"
-    #add TLS internal to caddyfile
-    #In local network Caddy can't reach Let's Encrypt servers to get a certificate
-    mv Caddyfile Caddyfile.public
-    mv Caddyfile.private Caddyfile
-    ;;
-*)
-    echo invalid response
-    exit 1
-    ;;
-esac
+    # ;;
+# n)
+#     echo "$DOMAIN_NAME is on a private DNS"
+#     #add TLS internal to caddyfile
+#     #In local network Caddy can't reach Let's Encrypt servers to get a certificate
+#     mv Caddyfile Caddyfile.public
+#     mv Caddyfile.private Caddyfile
+#     ;;
+# *)
+#     echo invalid response
+#     exit 1
+#     ;;
+# esac
 
 # Create passwords if they don't exist
 create_passwords
