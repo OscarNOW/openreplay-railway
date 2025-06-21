@@ -147,7 +147,7 @@ echo "D10"
 
 echo "D11"
 
-readarray -t services < <(docker-compose config --services)
+# readarray -t services < <(docker-compose config --services)
 echo "D12"
 # for service in "${services[@]}"; do
     # echo "Pulling image for $service..."
@@ -157,13 +157,13 @@ echo "D12"
 
 # fatal "Debug"
 
-echo "D13"
-docker-compose --profile migration up --force-recreate --build -d
-echo "D14"
-cp common.env common.env.bak
-echo "D15"
-echo "🎉🎉🎉  Done! 🎉🎉🎉"
-echo "D16"
+# echo "D13"
+# docker-compose --profile migration up --force-recreate --build -d
+# echo "D14"
+# cp common.env common.env.bak
+# echo "D15"
+# echo "🎉🎉🎉  Done! 🎉🎉🎉"
+# echo "D16"
 
-info "Installation complete!! open https://${DOMAIN_NAME} 🐳"
-info "${PWD} have the docker-compose file. you can use docker-compose stop/start"
+# info "Installation complete!! open https://${DOMAIN_NAME} 🐳"
+# info "${PWD} have the docker-compose file. you can use docker-compose stop/start"
