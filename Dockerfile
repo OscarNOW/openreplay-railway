@@ -4,7 +4,9 @@ FROM ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Install bash, curl, git, docker-compose
-RUN apt install -y curl git bash docker-compose
+RUN apt update && \
+    apt install -y curl git bash docker-compose && \
+    apt clean
 
 # Copy install script
 COPY . .
