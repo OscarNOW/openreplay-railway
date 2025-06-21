@@ -146,7 +146,8 @@ echo "D10"
 # esac
 
 echo "D11"
-chmod 666 /var/run/docker.sock
+pip3 install requests==2.29.0
+fatal "Debug"
 echo "D11.5"
 
 readarray -t services < <(docker-compose config --services)
