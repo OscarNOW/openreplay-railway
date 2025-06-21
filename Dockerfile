@@ -12,7 +12,7 @@ RUN apt update && \
 COPY . .
 
 # Run the install script (assumes it clones into /app or similar)
-RUN bash -c install.sh
+RUN bash -c ./install.sh
 
 # Set working dir to where the repo was cloned
 WORKDIR /openreplay/scripts/docker-compose
