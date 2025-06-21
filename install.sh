@@ -33,6 +33,6 @@ fi
 # Navigate into the repository directory
 cd "$CLONE_DIR/scripts/docker-compose"
 
-bash "./install-2.sh"
+bash "../../../install-2.sh"
 
 # End of wrapper script
