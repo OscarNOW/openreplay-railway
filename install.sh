@@ -31,8 +31,10 @@ else
 fi
 
 # Navigate into the repository directory
-# cd "$CLONE_DIR/scripts/docker-compose" || error "The directory $CLONE_DIR does not exist."
+cd "$CLONE_DIR/scripts/docker-compose"
 
-bash "./install-2.sh"
+pwd
+
+# bash "./install-2.sh"
 
 # End of wrapper script
